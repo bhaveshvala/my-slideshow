@@ -1,0 +1,131 @@
+/* wrapper slider styling */
+.wrapper_slider {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slider container styling */
+.my-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slick slider specific styles */
+.slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image styling */
+.slick-slide img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Ensure images fit the slider container */
+.my-slider img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+/* Hide default text in navigation arrows */
+.slick-prev:before, 
+.slick-next:before {
+    content: '';
+}
+/* Navigation arrows */
+.slick-prev, 
+.slick-next {
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Ensure background image size is controlled */
+.slick-prev:after, 
+.slick-next:after {
+    content: ''; /* Use if you have custom arrow icons */
+    display: block;
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+    background: url('path/to/your-arrow-icon.png') no-repeat center center;
+    background-size: contain; /* Ensure the icon fits */
+}
+/* Optional: Adjust arrow color and visibility */
+.slick-prev:after {
+    background-image: url('../images/previous.png'); /* Path to custom "prev" arrow icon */
+}
+
+.slick-next:after {
+    background-image: url('../images/next.png'); /* Path to custom "next" arrow icon */
+}
+
+/* Adjust arrow visibility on hover */
+.slick-prev:hover, 
+.slick-next:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #0073e6;
+}
+/* Positioning arrows */
+.slick-next {
+    right: 15px;
+}
+
+.slick-prev {
+    left: 15px;
+}
+
+/* Arrow hover effect */
+.slick-prev:hover, .slick-next:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #0073e6; 
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #0073e6;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #000;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .slick-prev, .slick-next {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+    .my-slider img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slick-prev, .slick-next {
+        width: 25px;
+        height: 25px;
+        font-size: 18px;
+    }
+    .slick-dots {
+        bottom: -20px;
+    }
+    .slick-dots li button:before {
+        font-size: 10px;
+    }
+    .my-slider img {
+        height: 150px;
+    }
+}
